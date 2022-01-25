@@ -11,12 +11,20 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.os.Handler;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPlASH_SCREEN=3000;
+    private static int SPlASH_SCREEN=2000;
     private int i=0;
     private Timer timer;
     private ProgressBar pb;
@@ -29,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
         IV=findViewById(R.id.IV);
         pb=(ProgressBar)findViewById(R.id.progressBar);
         timer=new Timer();
@@ -48,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
                     timer.cancel();
-                    Intent intent= new Intent(MainActivity.this,first.class);
+                    Intent intent= new Intent(MainActivity.this,login.class);
                     startActivity(intent);
                     finish();
                 }
