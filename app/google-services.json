@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "399504293293",
+    "project_id": "learning-time-app",
+    "storage_bucket": "learning-time-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399504293293:android:5fec84842d67edadf43524",
+        "android_client_info": {
+          "package_name": "com.example.learningtime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "399504293293-je8ecbi5mc9rguuubqdt7a6qpr40ouel.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.learningtime",
+            "certificate_hash": "931913a6de1f2303c83c990c0d95df89f43d1c7d"
+          }
+        },
+        {
+          "client_id": "399504293293-4csuocp0rifcb9fbapgh05n96bq8uru3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAixRBizBbLvMz2R1S5F6kC-l1n-o4p5hE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "399504293293-4csuocp0rifcb9fbapgh05n96bq8uru3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
