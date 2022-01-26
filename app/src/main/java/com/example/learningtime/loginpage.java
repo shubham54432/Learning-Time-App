@@ -1,6 +1,5 @@
 package com.example.learningtime;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
