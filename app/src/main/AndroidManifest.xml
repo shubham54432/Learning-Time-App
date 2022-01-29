@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".PdfAddActivity"
+            android:exported="true" />
+        <activity
             android:name=".CategoryAdd"
             android:exported="true" />
         <activity
