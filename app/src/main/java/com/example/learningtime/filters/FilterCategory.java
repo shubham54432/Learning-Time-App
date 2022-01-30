@@ -1,9 +1,11 @@
-package com.example.learningtime;
+package com.example.learningtime.filters;
 
 import android.widget.Filter;
 
+import com.example.learningtime.adapters.AdapterCategory;
+import com.example.learningtime.models.ModelCategory;
+
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class FilterCategory extends Filter {
 
