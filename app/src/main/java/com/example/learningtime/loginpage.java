@@ -55,6 +55,14 @@ public class loginpage extends AppCompatActivity {
                 validateData();
             }
         });
+
+        //handle click, open forgot password activity
+        binding.forgotTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(loginpage.this, ForgotPasswordActivity.class));
+            }
+        });
     }
 
     private String email="",password="";
