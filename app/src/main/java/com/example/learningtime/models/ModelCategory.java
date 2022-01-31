@@ -1,4 +1,4 @@
-package com.example.learningtime;
+package com.example.learningtime.models;
 
 public class ModelCategory {
     String id, category, uid;
