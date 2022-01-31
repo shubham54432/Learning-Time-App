@@ -18,10 +18,16 @@
             android:id="@+id/backBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@android:color/transparent"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             android:padding="5dp"
-            android:src="@drawable/ic_back_white"/>
+            android:src="@drawable/ic_back_white"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <!--Icon Image-->
         <ImageView
@@ -50,10 +56,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@android:color/transparent"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             android:padding="5dp"
-            android:src="@drawable/ic_attach_white"/>
+            android:src="@drawable/ic_attach_white"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </RelativeLayout>
 
@@ -77,9 +89,10 @@
             android:hint="Book Title"
             android:inputType="textPersonName|textCapWords"
             android:padding="10dp"
-            android:textSize="20sp"
             android:textColor="@color/black"
-            android:textColorHint="@color/grey01"/>
+            android:textColorHint="@color/grey01"
+            android:textSize="20sp"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,9 +117,10 @@
             android:hint="Book Description"
             android:inputType="textMultiLine|textCapSentences"
             android:padding="10dp"
-            android:textSize="20sp"
             android:textColor="@color/black"
-            android:textColorHint="@color/grey01"/>
+            android:textColorHint="@color/grey01"
+            android:textSize="20sp"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

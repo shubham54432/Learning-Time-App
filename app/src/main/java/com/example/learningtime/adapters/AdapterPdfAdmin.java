@@ -71,7 +71,6 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
     @Override
     public void onBindViewHolder(@NonNull HolderPdfAdmin holder, int position) {
 
-
         ModelPdf model=pdfArrayList.get(position);
         String title= model.getTitle();
         String description= model.getDescription();
