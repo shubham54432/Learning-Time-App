@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
-            android:name=".ForgotPasswordActivity"
-            android:exported="false" />
-        <activity
             android:name=".PdfAddActivity"
             android:exported="true" />
         <activity

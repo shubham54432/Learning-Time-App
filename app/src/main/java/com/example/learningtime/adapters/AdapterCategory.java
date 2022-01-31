@@ -1,7 +1,8 @@
-package com.example.learningtime;
+package com.example.learningtime.adapters;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.learningtime.PdfListAdminActivity;
+import com.example.learningtime.filters.FilterCategory;
+import com.example.learningtime.models.ModelCategory;
 import com.example.learningtime.databinding.RowCategoryBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -75,6 +79,16 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.Holder
                            }
                        })
                        .show();
+            }
+        });
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, PdfListAdminActivity.class);
+                intent.putExtra("categoryID",id);
+                intent.putExtra("categoryTitle",category);
+                context.startActivity(intent);
             }
         });
     }

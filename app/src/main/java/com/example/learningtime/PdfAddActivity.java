@@ -40,7 +40,7 @@ public class PdfAddActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
 
-    private ArrayList<ModelCategory> categoryArrayList;
+    private ArrayList<String> categoryArrayList, IdArrayList;
 
     private Uri pdfUri=null;
 
@@ -90,7 +90,7 @@ public class PdfAddActivity extends AppCompatActivity {
         });
     }
 
-    private String title="",description="",category="";
+    private String title="",description="";
 
     private void validateData() {
         Log.d(TAG, "validateData: validate data");
@@ -98,7 +98,6 @@ public class PdfAddActivity extends AppCompatActivity {
 
         title=binding.titleEt.getText().toString().trim();
         description=binding.descriptionEt.getText().toString().trim();
-        category=binding.categoryTv.getText().toString().trim();
 
         if(TextUtils.isEmpty(title)){
             Toast.makeText(this, "Enter Title...", Toast.LENGTH_SHORT).show();
@@ -106,7 +105,7 @@ public class PdfAddActivity extends AppCompatActivity {
         else if(TextUtils.isEmpty(description)){
             Toast.makeText(this, "Enter Description...", Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(category)){
+        else if(TextUtils.isEmpty(selectedCategoryTitle)){
             Toast.makeText(this, "Pick Category...", Toast.LENGTH_SHORT).show();
         }
         else
@@ -166,7 +165,7 @@ public class PdfAddActivity extends AppCompatActivity {
         hashMap.put("id",""+timestamp);
         hashMap.put("title",""+title);
         hashMap.put("description",""+description);
-        hashMap.put("category",""+category);
+        hashMap.put("categoryId",""+selectedCategoryId);
         hashMap.put("url",""+uploadedPdfUrl);
         hashMap.put("timestamp",timestamp);
 
@@ -193,19 +192,22 @@ public class PdfAddActivity extends AppCompatActivity {
 
     private void loadPdfCategories() {
         Log.d(TAG, "loadPdfCategories: Loading PDF Categories...");
-        categoryArrayList=new ArrayList<>();
+        categoryArrayList =new ArrayList<>();
+        IdArrayList=new ArrayList<>();
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Categories");
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 categoryArrayList.clear();
+                IdArrayList.clear();
+
                 for(DataSnapshot ds: snapshot.getChildren()){
-                    ModelCategory model=ds.getValue(ModelCategory.class);
+                    String categoryId=""+ds.child("Id").getValue();
+                    String categoryTitle=""+ds.child("category").getValue();
 
-                    categoryArrayList.add(model);
-
-                    Log.d(TAG, "onDataChange: "+model.getCategory());
+                    categoryArrayList.add(categoryTitle);
+                    IdArrayList.add(categoryId);
                 }
             }
             @Override
@@ -215,12 +217,14 @@ public class PdfAddActivity extends AppCompatActivity {
         });
     }
 
+    private String selectedCategoryId, selectedCategoryTitle;
+
     private void categoryPickDialog() {
         Log.d(TAG, "categoryPickDialog: showing category dialog");
 
         String[] categoriesArray=new String[categoryArrayList.size()];
-        for(int i=0;i<categoryArrayList.size();i++){
-            categoriesArray[i]=categoryArrayList.get(i).getCategory();
+        for(int i = 0; i< categoryArrayList.size(); i++){
+            categoriesArray[i]= categoryArrayList.get(i);
         }
 
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
@@ -228,11 +232,12 @@ public class PdfAddActivity extends AppCompatActivity {
                 .setItems(categoriesArray, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        String category=categoriesArray[i];
+                        selectedCategoryTitle=categoryArrayList.get(i);
+                        selectedCategoryId=IdArrayList.get(i);
 
-                        binding.categoryTv.setText(category);
+                        binding.categoryTv.setText(selectedCategoryTitle);
 
-                        Log.d(TAG, "onClick: Selected Category: "+category);
+                        Log.d(TAG, "onClick: Selected Category: "+selectedCategoryId+" "+selectedCategoryTitle);
                     }
                 })
                 .show();
