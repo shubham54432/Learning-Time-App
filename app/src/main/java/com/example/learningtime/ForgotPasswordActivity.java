@@ -45,7 +45,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         //handle click, go back
         binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 onBackPressed();
             }
         });
@@ -53,7 +53,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         //handle click, begin recovery password
         binding.submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 validateData();
             }
         });
