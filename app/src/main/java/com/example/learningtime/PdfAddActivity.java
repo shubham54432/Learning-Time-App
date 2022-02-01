@@ -40,7 +40,7 @@ public class PdfAddActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
 
-    private ArrayList<String> categoryArrayList, IdArrayList;
+    private ArrayList<String> categoryTitleArrayList, categoryIdArrayList;
 
     private Uri pdfUri=null;
 
@@ -192,22 +192,22 @@ public class PdfAddActivity extends AppCompatActivity {
 
     private void loadPdfCategories() {
         Log.d(TAG, "loadPdfCategories: Loading PDF Categories...");
-        categoryArrayList =new ArrayList<>();
-        IdArrayList=new ArrayList<>();
+        categoryTitleArrayList =new ArrayList<>();
+        categoryIdArrayList=new ArrayList<>();
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Categories");
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                categoryArrayList.clear();
-                IdArrayList.clear();
+                categoryTitleArrayList.clear();
+                categoryIdArrayList.clear();
 
                 for(DataSnapshot ds: snapshot.getChildren()){
-                    String categoryId=""+ds.child("Id").getValue();
+                    String categoryId=""+ds.child("id").getValue();
                     String categoryTitle=""+ds.child("category").getValue();
 
-                    categoryArrayList.add(categoryTitle);
-                    IdArrayList.add(categoryId);
+                    categoryTitleArrayList.add(categoryTitle);
+                    categoryIdArrayList.add(categoryId);
                 }
             }
             @Override
@@ -222,9 +222,9 @@ public class PdfAddActivity extends AppCompatActivity {
     private void categoryPickDialog() {
         Log.d(TAG, "categoryPickDialog: showing category dialog");
 
-        String[] categoriesArray=new String[categoryArrayList.size()];
-        for(int i = 0; i< categoryArrayList.size(); i++){
-            categoriesArray[i]= categoryArrayList.get(i);
+        String[] categoriesArray=new String[categoryTitleArrayList.size()];
+        for(int i = 0; i< categoryTitleArrayList.size(); i++){
+            categoriesArray[i]= categoryTitleArrayList.get(i);
         }
 
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
@@ -232,8 +232,8 @@ public class PdfAddActivity extends AppCompatActivity {
                 .setItems(categoriesArray, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        selectedCategoryTitle=categoryArrayList.get(i);
-                        selectedCategoryId=IdArrayList.get(i);
+                        selectedCategoryTitle= categoryTitleArrayList.get(i);
+                        selectedCategoryId=categoryIdArrayList.get(i);
 
                         binding.categoryTv.setText(selectedCategoryTitle);
 
