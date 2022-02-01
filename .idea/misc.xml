@@ -3,11 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/activity_category_add.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/activity_dashboard_admin.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/activity_dashboard_user.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/activity_first.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/activity_forgot_password.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/activity_loginpage.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/activity_pdf_add.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/activity_pdf_list_admin.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/activity_scrolling.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/activity_second.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Learning-Time-App/app/src/main/res/layout/row_pdf_admin.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
