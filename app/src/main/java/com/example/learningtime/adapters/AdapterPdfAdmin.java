@@ -5,6 +5,7 @@ import static com.example.learningtime.constants.MAX_BYTES_PDF;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.MediaSync;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.learningtime.MyApplication;
+import com.example.learningtime.PdfEditActivity;
 import com.example.learningtime.databinding.RowPdfAdminBinding;
 import com.example.learningtime.filters.FilterPdfAdmin;
 import com.example.learningtime.models.ModelPdf;
@@ -103,6 +105,10 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
     }
 
     private void moreOptionsDialog(ModelPdf model, HolderPdfAdmin holder) {
+        String bookId= model.getId();
+        String bookUrl= model.getUrl();
+        String bookTitle= model.getTitle();
+
         String[] options={"Edit","Delete"};
 
         AlertDialog.Builder builder=new AlertDialog.Builder(context);
@@ -110,10 +116,12 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
                 .setItems(options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if(i==0){
-
+                        /*if(i==0){
+                            Intent intent=new Intent(context, PdfEditActivity.class);
+                            intent.putExtra("bookId",bookId);
+                            context.startActivity(intent);
                         }
-                        else if(i==1){
+                        else */if(i==1){
                             deleteBook(model,holder);
                         }
                     }
@@ -131,7 +139,7 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
         progressDialog.show();
 
         Log.d(TAG, "deleteBook: Deleting from storage...");
-        StorageReference storageReference=FirebaseStorage.getInstance().getReference(bookUrl);
+        StorageReference storageReference=FirebaseStorage.getInstance().getReferenceFromUrl(bookUrl);
         storageReference.delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
