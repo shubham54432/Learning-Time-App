@@ -12,24 +12,24 @@
         android:layout_height="300dp"
         android:background="@drawable/shape_toolbar01">
 
-    <ImageView
-        android:id="@+id/iconIv"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/logo"/>
+        <ImageView
+            android:id="@+id/iconIv"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/logo" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/iconIv"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Please Login"
-        android:textColor="@color/white"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="35sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iconIv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Please Login"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
 
     </RelativeLayout>
 
