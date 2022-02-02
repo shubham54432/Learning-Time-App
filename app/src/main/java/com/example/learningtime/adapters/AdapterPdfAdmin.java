@@ -98,7 +98,7 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
 
         holder.moreBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 moreOptionsDialog(model, holder);
             }
         });
@@ -115,13 +115,13 @@ public class AdapterPdfAdmin extends RecyclerView.Adapter<AdapterPdfAdmin.Holder
         builder.setTitle("Choose Options")
                 .setItems(options, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        /*if(i==0){
+                    public void onClick(DialogInterface dialog, int i) {
+                        if(i==0){
                             Intent intent=new Intent(context, PdfEditActivity.class);
                             intent.putExtra("bookId",bookId);
                             context.startActivity(intent);
                         }
-                        else */if(i==1){
+                        else if(i==1){
                             deleteBook(model,holder);
                         }
                     }

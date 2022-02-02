@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="270dp"
+        android:layout_height="250dp"
         android:background="@drawable/shape_toolbar01">
 
         <ImageButton
@@ -28,10 +28,10 @@
 
         <ImageView
             android:id="@+id/iconIv"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:src="@drawable/logo" />
 
         <TextView
@@ -39,11 +39,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/iconIv"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-condensed"
             android:text="Edit Book Info"
             android:textColor="@color/white"
-            android:textSize="35sp" />
+            android:textSize="28sp" />
 
     </RelativeLayout>
 
